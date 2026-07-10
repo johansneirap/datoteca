@@ -1,0 +1,54 @@
+name: Feature request
+description: Propón un nuevo generador, opción de API, o mejora para datoteca
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de abrir la propuesta, revisa el Roadmap en el README — puede que ya esté anotada en el backlog.
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Paquete afectado
+      options:
+        - "@datoteca/cl"
+        - "@datoteca/core"
+        - Nuevo paquete (ej. otro país)
+        - No aplica / tooling del repo
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: ¿Qué problema resuelve?
+      description: Describe el caso de uso o la limitación actual que motiva esta propuesta
+    validations:
+      required: true
+
+  - type: textarea
+    id: api-proposal
+    attributes:
+      label: Propuesta de API (si aplica)
+      description: Firma de función, opciones, ejemplo de uso
+      placeholder: |
+        dl.persona.rut({ tipo: 'empresa' | 'persona' }): string
+      render: ts
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Otras formas de resolver el mismo problema que evaluaste y por qué las descartaste
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Contexto adicional
+    validations:
+      required: false
