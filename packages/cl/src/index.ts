@@ -5,6 +5,7 @@ import type { RutOptions } from './rut.js';
 import { PersonaNamespace } from './namespaces/persona.js';
 import { DireccionNamespace } from './namespaces/direccion.js';
 import { TelefonoNamespace } from './namespaces/telefono.js';
+import { DineroNamespace } from './namespaces/dinero.js';
 
 export interface DatotecaOptions {
   seed: number | string;
@@ -16,12 +17,14 @@ export class Datoteca {
   readonly persona: PersonaNamespace;
   readonly direccion: DireccionNamespace;
   readonly telefono: TelefonoNamespace;
+  readonly dinero: DineroNamespace;
 
   constructor(options: DatotecaOptions) {
     this.rng = createRng(options.seed);
     this.persona = new PersonaNamespace(this.rng);
     this.direccion = new DireccionNamespace(this.rng);
     this.telefono = new TelefonoNamespace(this.rng);
+    this.dinero = new DineroNamespace(this.rng);
   }
 
   rut(options?: RutOptions): string {
