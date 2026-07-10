@@ -7,6 +7,7 @@ import { DireccionNamespace } from './namespaces/direccion.js';
 import { TelefonoNamespace } from './namespaces/telefono.js';
 import { DineroNamespace } from './namespaces/dinero.js';
 import { BancoNamespace } from './namespaces/banco.js';
+import { EmpresaNamespace } from './namespaces/empresa.js';
 
 export interface DatotecaOptions {
   seed: number | string;
@@ -20,6 +21,7 @@ export class Datoteca {
   readonly telefono: TelefonoNamespace;
   readonly dinero: DineroNamespace;
   readonly banco: BancoNamespace;
+  readonly empresa: EmpresaNamespace;
 
   constructor(options: DatotecaOptions) {
     this.rng = createRng(options.seed);
@@ -28,6 +30,7 @@ export class Datoteca {
     this.telefono = new TelefonoNamespace(this.rng);
     this.dinero = new DineroNamespace(this.rng);
     this.banco = new BancoNamespace(this.rng);
+    this.empresa = new EmpresaNamespace(this.rng);
   }
 
   rut(options?: RutOptions): string {
