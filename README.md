@@ -55,6 +55,7 @@ Y determinístico por seed: misma seed + mismo orden de llamadas → mismos resu
 - [TypeScript](https://www.typescriptlang.org/) en modo `strict` + `noUncheckedIndexedAccess`
 - [tsup](https://tsup.egoist.dev/) — build a ESM + CJS + `.d.ts` por paquete
 - [Vitest](https://vitest.dev/) — tests de formato y determinismo por generador
+- [Commander](https://github.com/tj/commander.js) — parsing de argumentos de `@datoteca/cli`
 - [pnpm workspaces](https://pnpm.io/workspaces) — monorepo
 - [Changesets](https://github.com/changesets/changesets) — versionado y publicación
 
@@ -80,6 +81,12 @@ pnpm add @datoteca/cl
 ```
 
 `@datoteca/core` es una dependencia interna de `@datoteca/cl` (PRNG y helpers compartidos) y se instala automáticamente — no hace falta agregarlo a mano.
+
+¿No querís escribir código? Usa el CLI directo con `npx`, sin instalar nada:
+
+```sh
+npx @datoteca/cli person --seed 42 --count 3
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,6 +142,17 @@ dl.dinero.ufNumero(); // 1234.56      (number, hasta 2 decimales)
 
 Namespaces disponibles en el MVP: `persona`, `direccion`, `telefono`, `dinero`, `banco`, `empresa`, más `rut()` en la raíz por ser el dato más emblemático.
 
+### CLI
+
+[`@datoteca/cli`](./packages/cli) expone los mismos generadores desde la terminal — pensado para poblar fixtures rápido, generar CSV/JSON para QA, o usarlo desde stacks no-JS (Go, Python, etc.), sin escribir código:
+
+```sh
+npx @datoteca/cli rut --seed 42 --count 5
+npx @datoteca/cli money --seed 42 --currency UF --min 10 --max 500 --format csv > fixtures.csv
+```
+
+Un subcomando por generador (`rut`, `person`, `address`, `phone`, `money`, `company`), formatos `json`/`csv`/`ndjson`, y la misma garantía de determinismo por seed. Ver el [README de `@datoteca/cli`](./packages/cli/README.md) para la referencia completa de comandos y flags.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
@@ -150,11 +168,11 @@ Namespaces disponibles en el MVP: `persona`, `direccion`, `telefono`, `dinero`, 
 - [x] `banco` — nombre, cuenta
 - [x] `empresa` — razón social, giro
 - [x] Build (tsup ESM+CJS+d.ts), Changesets, CI y release workflows en GitHub Actions
+- [x] `@datoteca/cli` (`npx @datoteca/cli ...`) — un subcomando por generador, formatos json/csv/ndjson
 
 **Backlog — fuera del MVP**
 
 - [ ] Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- [ ] CLI (`npx datos-latam ...`)
 - [ ] Seeds reproducibles documentadas públicamente (dataset de ejemplos "golden" para snapshot testing)
 
 <!-- TODO: agregar link a GitHub Issues cuando el repo tenga labels/triage configurado -->
