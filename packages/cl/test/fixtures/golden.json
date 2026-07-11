@@ -1,0 +1,227 @@
+{
+  "sequenceVersion": 1,
+  "seeds": {
+    "1": [
+      {
+        "call": "rut()",
+        "value": "16049775-0"
+      },
+      {
+        "call": "rut({ format: 'dots', dv: false })",
+        "value": "1.065.657"
+      },
+      {
+        "call": "persona.nombre()",
+        "value": "Ricardo"
+      },
+      {
+        "call": "persona.apellido()",
+        "value": "Riquelme"
+      },
+      {
+        "call": "persona.nombreCompleto()",
+        "value": "Rosario Ramírez Flores"
+      },
+      {
+        "call": "direccion.comuna()",
+        "value": "Cabo de Hornos"
+      },
+      {
+        "call": "direccion.calle()",
+        "value": "Avenida Manuel Rodríguez"
+      },
+      {
+        "call": "direccion.direccionCompleta()",
+        "value": "Calle Las Magnolias 2475, Calle Larga"
+      },
+      {
+        "call": "telefono.movil()",
+        "value": "+56 9 4037 2104"
+      },
+      {
+        "call": "telefono.fijo()",
+        "value": "+56 51 7226571"
+      },
+      {
+        "call": "dinero.clpNumero()",
+        "value": 3605018
+      },
+      {
+        "call": "dinero.clp({ min: 10000, max: 20000 })",
+        "value": "$14.541"
+      },
+      {
+        "call": "dinero.ufNumero()",
+        "value": 7704.37
+      },
+      {
+        "call": "dinero.uf()",
+        "value": "UF 9.945,35"
+      },
+      {
+        "call": "banco.nombre()",
+        "value": "Banco Santander"
+      },
+      {
+        "call": "banco.cuenta()",
+        "value": "13421751206"
+      },
+      {
+        "call": "empresa.razonSocial()",
+        "value": "Soluciones Sepúlveda EIRL"
+      },
+      {
+        "call": "empresa.giro()",
+        "value": "Restaurantes y servicios de comida"
+      }
+    ],
+    "42": [
+      {
+        "call": "rut()",
+        "value": "15426490-6"
+      },
+      {
+        "call": "rut({ format: 'dots', dv: false })",
+        "value": "11.758.973"
+      },
+      {
+        "call": "persona.nombre()",
+        "value": "Pablo"
+      },
+      {
+        "call": "persona.apellido()",
+        "value": "Contreras"
+      },
+      {
+        "call": "persona.nombreCompleto()",
+        "value": "Tomás Sánchez Molina"
+      },
+      {
+        "call": "direccion.comuna()",
+        "value": "Peralillo"
+      },
+      {
+        "call": "direccion.calle()",
+        "value": "Calle Av. Matta"
+      },
+      {
+        "call": "direccion.direccionCompleta()",
+        "value": "Pasaje Las Camelias 1973, Pencahue"
+      },
+      {
+        "call": "telefono.movil()",
+        "value": "+56 9 6604 8050"
+      },
+      {
+        "call": "telefono.fijo()",
+        "value": "+56 33 0175018"
+      },
+      {
+        "call": "dinero.clpNumero()",
+        "value": 2439212
+      },
+      {
+        "call": "dinero.clp({ min: 10000, max: 20000 })",
+        "value": "$18.091"
+      },
+      {
+        "call": "dinero.ufNumero()",
+        "value": 3195.3
+      },
+      {
+        "call": "dinero.uf()",
+        "value": "UF 4.499,51"
+      },
+      {
+        "call": "banco.nombre()",
+        "value": "Banco de Chile"
+      },
+      {
+        "call": "banco.cuenta()",
+        "value": "55262378"
+      },
+      {
+        "call": "empresa.razonSocial()",
+        "value": "Constructora Martínez Ltda."
+      },
+      {
+        "call": "empresa.giro()",
+        "value": "Transporte de carga por carretera"
+      }
+    ],
+    "12345": [
+      {
+        "call": "rut()",
+        "value": "24513479-7"
+      },
+      {
+        "call": "rut({ format: 'dots', dv: false })",
+        "value": "8.362.054"
+      },
+      {
+        "call": "persona.nombre()",
+        "value": "Gabriela"
+      },
+      {
+        "call": "persona.apellido()",
+        "value": "Castillo"
+      },
+      {
+        "call": "persona.nombreCompleto()",
+        "value": "Javiera Fernández Pizarro"
+      },
+      {
+        "call": "direccion.comuna()",
+        "value": "Lanco"
+      },
+      {
+        "call": "direccion.calle()",
+        "value": "Avenida Av. Irarrázaval"
+      },
+      {
+        "call": "direccion.direccionCompleta()",
+        "value": "Camino Av. Pedro de Valdivia 6276, El Bosque"
+      },
+      {
+        "call": "telefono.movil()",
+        "value": "+56 9 4378 6776"
+      },
+      {
+        "call": "telefono.fijo()",
+        "value": "+56 45 0327120"
+      },
+      {
+        "call": "dinero.clpNumero()",
+        "value": 3146312
+      },
+      {
+        "call": "dinero.clp({ min: 10000, max: 20000 })",
+        "value": "$19.273"
+      },
+      {
+        "call": "dinero.ufNumero()",
+        "value": 3478.39
+      },
+      {
+        "call": "dinero.uf()",
+        "value": "UF 2.120,67"
+      },
+      {
+        "call": "banco.nombre()",
+        "value": "Banco de Chile"
+      },
+      {
+        "call": "banco.cuenta()",
+        "value": "80579059584"
+      },
+      {
+        "call": "empresa.razonSocial()",
+        "value": "Ingeniería Morales S.A."
+      },
+      {
+        "call": "empresa.giro()",
+        "value": "Restaurantes y servicios de comida"
+      }
+    ]
+  }
+}

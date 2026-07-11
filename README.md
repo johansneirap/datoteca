@@ -168,12 +168,12 @@ Un subcomando por generador (`rut`, `person`, `address`, `phone`, `money`, `comp
 - [x] `banco` — nombre, cuenta
 - [x] `empresa` — razón social, giro
 - [x] Build (tsup ESM+CJS+d.ts), Changesets, CI y release workflows en GitHub Actions
+- [x] Golden dataset de seeds documentadas para snapshot testing (ver [docs/determinism.md](./docs/determinism.md))
 - [x] `@datoteca/cli` (`npx @datoteca/cli ...`) — un subcomando por generador, formatos json/csv/ndjson
 
 **Backlog — fuera del MVP**
 
 - [ ] Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- [ ] Seeds reproducibles documentadas públicamente (dataset de ejemplos "golden" para snapshot testing)
 
 <!-- TODO: agregar link a GitHub Issues cuando el repo tenga labels/triage configurado -->
 
