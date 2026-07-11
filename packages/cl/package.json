@@ -50,7 +50,8 @@
     "build": "tsup",
     "test": "vitest run",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "golden:generate": "vitest run --config vitest.golden.config.ts"
   },
   "dependencies": {
     "@datoteca/core": "workspace:*"
