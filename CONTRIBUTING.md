@@ -46,6 +46,8 @@ docs: actualiza ejemplos de uso en README
 ci: agrega matriz de Node 22 a CI
 ```
 
+**El título del PR también debe seguir este formato.** El repo mergea PRs con **squash**, así que el título del PR se convierte en el mensaje del commit final en `main` — y ese paso no pasa por el hook de commitlint (que solo corre en commits locales). Un check de CI (`lint-title`) lo valida automáticamente en cada PR.
+
 ## Changesets
 
 Si tu cambio modifica la **API pública** de `@datoteca/core` o `@datoteca/cl` (nueva función, cambio de firma, cambio de comportamiento visible), agrega un changeset:
@@ -60,14 +62,19 @@ Cambios internos (tooling, CI, tests, docs, refactors sin impacto en la API) **n
 
 ## Flujo: branch → PR → CI → merge
 
-Nunca se hace push directo a `main`.
+`main` está protegida: no se puede pushear directo (ni siquiera como admin — la protección aplica para todos), ni hacer force-push o borrarla.
 
 1. Crea una rama desde `main`: `git checkout -b feat/mi-cambio`
 2. Haz tus cambios y commitea siguiendo Conventional Commits
 3. Si aplica, agrega un changeset (`pnpm changeset`)
 4. Verifica localmente: `pnpm build && pnpm test && pnpm lint && pnpm typecheck`
-5. Push a tu rama y abre un Pull Request contra `main`
-6. CI corre lint/test/build en Node 18 y 20 — el PR debe pasar en verde
-7. Una vez aprobado y en verde, se hace merge a `main`
+5. Push a tu rama y abre un Pull Request contra `main` con un título que siga Conventional Commits
+6. Deben pasar en verde los checks requeridos: `test (18)`, `test (20)` (lint/build/test en Node 18 y 20) y `lint-title`. La rama debe estar actualizada con `main` (si `main` avanzó, hay que actualizar la rama antes de mergear)
+7. Se mergea con **squash** — es la única estrategia habilitada en el repo, para mantener un commit por PR en `main`. El título del PR queda como mensaje del commit
+8. La rama se borra automáticamente al mergear
 
 Al mergear a `main`, si hay changesets pendientes, el workflow de release abre (o actualiza) un PR de "Version Packages" con los bumps de versión y el changelog. Mergear ese PR es lo que dispara la publicación a npm.
+
+### Actualizaciones de dependencias (Dependabot)
+
+Dependabot abre PRs semanales agrupados (`npm` y `github-actions`). Los majors de `eslint`/`typescript`/`vitest`/`typescript-eslint` están **excluidos** (`ignore` en `dependabot.yml`) porque tienden a romperse entre sí — un bump así rompió CI una vez (ver `fix: revierte bump mayor de eslint/typescript que rompía CI`). Esos majors se actualizan a mano, verificando que build/lint/test pasen localmente antes de abrir el PR. Los PRs de Dependabot pasan por los mismos checks requeridos que cualquier otro PR antes de poder mergear.
