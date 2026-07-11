@@ -44,6 +44,9 @@ Datoteca.calcularDV(12345678); // "5"
 
 dl.dinero.clp({ min: 10_000, max: 200_000 });
 dl.dinero.uf(); // "UF 1.234,56"
+
+dl.dinero.clpNumero(); // 45000       (number, sin formatear)
+dl.dinero.ufNumero(); // 1234.56     (number, hasta 2 decimales)
 ```
 
 ## Namespaces
@@ -54,7 +57,7 @@ dl.dinero.uf(); // "UF 1.234,56"
 | `persona` | `nombre()`, `apellido()`, `nombreCompleto()` |
 | `direccion` | `comuna()`, `calle()`, `direccionCompleta()` |
 | `telefono` | `movil()`, `fijo()` |
-| `dinero` | `clp(options?)`, `uf(options?)` |
+| `dinero` | `clp(options?)`, `uf(options?)`, `clpNumero(options?)`, `ufNumero(options?)` |
 | `banco` | `nombre()`, `cuenta()` |
 | `empresa` | `razonSocial()`, `giro()` |
 

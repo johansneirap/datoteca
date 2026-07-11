@@ -24,16 +24,22 @@ const formatoUF = new Intl.NumberFormat('es-CL', {
 export class DineroNamespace {
   constructor(private readonly rng: Rng) {}
 
-  clp(options: RangoOptions = {}): string {
+  clpNumero(options: RangoOptions = {}): number {
     const { min = CLP_MIN_DEFAULT, max = CLP_MAX_DEFAULT } = options;
-    const valor = this.rng.intBetween(min, max);
-    return formatoCLP.format(valor);
+    return this.rng.intBetween(min, max);
+  }
+
+  clp(options: RangoOptions = {}): string {
+    return formatoCLP.format(this.clpNumero(options));
+  }
+
+  ufNumero(options: RangoOptions = {}): number {
+    const { min = UF_MIN_DEFAULT, max = UF_MAX_DEFAULT } = options;
+    const centavos = this.rng.intBetween(Math.round(min * 100), Math.round(max * 100));
+    return centavos / 100;
   }
 
   uf(options: RangoOptions = {}): string {
-    const { min = UF_MIN_DEFAULT, max = UF_MAX_DEFAULT } = options;
-    const centavos = this.rng.intBetween(Math.round(min * 100), Math.round(max * 100));
-    const valor = centavos / 100;
-    return `UF ${formatoUF.format(valor)}`;
+    return `UF ${formatoUF.format(this.ufNumero(options))}`;
   }
 }
