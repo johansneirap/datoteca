@@ -12,6 +12,12 @@ updates:
         dependency-type: "production"
       dev-dependencies:
         dependency-type: "development"
+    # Los majors de eslint/typescript/vitest suelen romperse entre sí (ver
+    # incidente: typescript 7 + @typescript-eslint 8.63 rompió el lint en CI).
+    # Se actualizan a mano, revisando compatibilidad, no vía Dependabot.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     commit-message:
       prefix: "chore"
       include: "scope"
