@@ -10,7 +10,6 @@ Ideas y mejoras anotadas pero no implementadas todavía, junto con la razón par
 ## Producto (ver también el Roadmap en README.md)
 
 - Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- Variante numérica de `dinero.*` para consumidores que necesiten operar los valores
 - RUT de empresa vs. RUT de persona natural como generadores separados
 - CLI (`npx datos-latam ...`)
 - Seeds reproducibles documentadas públicamente (dataset de ejemplos "golden" para snapshot testing)

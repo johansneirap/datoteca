@@ -117,6 +117,13 @@ dl.dinero.clp({ min: 10_000, max: 200_000 });
 dl.dinero.uf(); // "UF 1.234,56"
 ```
 
+`dinero.clp()`/`dinero.uf()` devuelven el string ya formateado; si necesitas operar el valor (sumar, comparar, etc.), usa la variante numérica:
+
+```ts
+dl.dinero.clpNumero(); // 45000        (number, sin formatear)
+dl.dinero.ufNumero(); // 1234.56      (number, hasta 2 decimales)
+```
+
 Namespaces disponibles en el MVP: `persona`, `direccion`, `telefono`, `dinero`, `banco`, `empresa`, más `rut()` en la raíz por ser el dato más emblemático.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -130,7 +137,7 @@ Namespaces disponibles en el MVP: `persona`, `direccion`, `telefono`, `dinero`, 
 - [x] `persona` — nombre, apellido, nombre completo
 - [x] `direccion` — comuna (dataset real SUBDERE), calle, dirección completa
 - [x] `telefono` — móvil, fijo
-- [x] `dinero` — CLP, UF (formateados en `es-CL`)
+- [x] `dinero` — CLP, UF (formateados en `es-CL`), más `clpNumero()`/`ufNumero()` para quien necesite operar los valores
 - [x] `banco` — nombre, cuenta
 - [x] `empresa` — razón social, giro
 - [x] Build (tsup ESM+CJS+d.ts), Changesets, CI y release workflows en GitHub Actions
@@ -138,7 +145,6 @@ Namespaces disponibles en el MVP: `persona`, `direccion`, `telefono`, `dinero`, 
 **Backlog — fuera del MVP**
 
 - [ ] Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- [ ] Variante numérica de `dinero.*` para consumidores que necesiten operar los valores
 - [ ] RUT de empresa vs. RUT de persona natural como generadores separados
 - [ ] CLI (`npx datos-latam ...`)
 - [ ] Seeds reproducibles documentadas públicamente (dataset de ejemplos "golden" para snapshot testing)
