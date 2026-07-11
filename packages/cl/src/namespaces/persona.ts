@@ -1,8 +1,14 @@
 import type { Rng } from '@datoteca/core';
 import { APELLIDOS, NOMBRES_FEMENINOS, NOMBRES_MASCULINOS } from '../data/nombres.js';
+import { generarRut } from '../rut.js';
+import type { RutOptions } from '../rut.js';
 
 export class PersonaNamespace {
   constructor(private readonly rng: Rng) {}
+
+  rut(options?: RutOptions): string {
+    return generarRut(this.rng, options);
+  }
 
   nombre(): string {
     const nombres = this.rng.pickOne([NOMBRES_FEMENINOS, NOMBRES_MASCULINOS]);

@@ -7,8 +7,12 @@ export interface RutOptions {
   dv?: boolean;
 }
 
-const RUT_MIN = 1_000_000;
-const RUT_MAX = 25_000_000;
+const PERSONA_MIN = 1_000_000;
+const PERSONA_MAX = 25_000_000;
+
+// El SII asigna RUT de personas jurídicas (empresas) a partir de 50.000.000.
+const EMPRESA_MIN = 50_000_000;
+const EMPRESA_MAX = 99_999_999;
 
 /**
  * Calcula el dígito verificador de un RUT chileno con el algoritmo módulo 11 estándar.
@@ -46,9 +50,9 @@ function formatearNumero(numero: number, format: RutFormat): string {
   return conPuntos;
 }
 
-export function generarRut(rng: Rng, options: RutOptions = {}): string {
+function generarRutEnRango(rng: Rng, min: number, max: number, options: RutOptions): string {
   const { format = 'dash', dv = true } = options;
-  const numero = rng.intBetween(RUT_MIN, RUT_MAX);
+  const numero = rng.intBetween(min, max);
   const numeroFormateado = formatearNumero(numero, format);
 
   if (!dv) {
@@ -58,4 +62,14 @@ export function generarRut(rng: Rng, options: RutOptions = {}): string {
   const digitoVerificador = calcularDV(numero);
   const separador = format === 'raw' ? '' : '-';
   return `${numeroFormateado}${separador}${digitoVerificador}`;
+}
+
+/** RUT de persona natural (rango 1.000.000-25.000.000). */
+export function generarRut(rng: Rng, options: RutOptions = {}): string {
+  return generarRutEnRango(rng, PERSONA_MIN, PERSONA_MAX, options);
+}
+
+/** RUT de persona jurídica / empresa (rango 50.000.000-99.999.999). */
+export function generarRutEmpresa(rng: Rng, options: RutOptions = {}): string {
+  return generarRutEnRango(rng, EMPRESA_MIN, EMPRESA_MAX, options);
 }

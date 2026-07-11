@@ -115,6 +115,15 @@ dl.rut({ format: 'raw' }); // "123456789"
 dl.rut({ dv: false }); // "12345678"     (sin dígito verificador)
 ```
 
+`rut()` en la raíz genera RUT de persona natural. Si necesitas distinguir explícitamente entre persona natural y empresa (el SII asigna RUT de personas jurídicas desde el 50.000.000), usa los generadores por namespace:
+
+```ts
+dl.persona.rut(); // "12345678-9"    (rango persona natural: 1.000.000-25.000.000)
+dl.empresa.rut(); // "76543210-K"    (rango empresa: 50.000.000-99.999.999)
+```
+
+Ambos aceptan las mismas opciones (`format`, `dv`) que `rut()`.
+
 Dígito verificador de forma independiente (método estático, no requiere seed) y dinero con rango personalizado:
 
 ```ts
@@ -151,7 +160,7 @@ Un subcomando por generador (`rut`, `person`, `address`, `phone`, `money`, `comp
 **MVP v0.x — implementado**
 
 - [x] `@datoteca/core`: PRNG determinístico (mulberry32) + helpers (`pickOne`, `pickWeighted`, `intBetween`, `arrayOf`)
-- [x] `rut()` con formatos `dash`/`dots`/`raw`, dígito verificador módulo 11, y `Datoteca.calcularDV()` estático
+- [x] `rut()` con formatos `dash`/`dots`/`raw`, dígito verificador módulo 11, y `Datoteca.calcularDV()` estático — más `persona.rut()`/`empresa.rut()` como generadores separados por rango
 - [x] `persona` — nombre, apellido, nombre completo
 - [x] `direccion` — comuna (dataset real SUBDERE), calle, dirección completa
 - [x] `telefono` — móvil, fijo
@@ -164,7 +173,6 @@ Un subcomando por generador (`rut`, `person`, `address`, `phone`, `money`, `comp
 **Backlog — fuera del MVP**
 
 - [ ] Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- [ ] RUT de empresa vs. RUT de persona natural como generadores separados
 - [ ] Seeds reproducibles documentadas públicamente (dataset de ejemplos "golden" para snapshot testing)
 
 <!-- TODO: agregar link a GitHub Issues cuando el repo tenga labels/triage configurado -->
