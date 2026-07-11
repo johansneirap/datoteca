@@ -1,0 +1,53 @@
+{
+  "name": "@datoteca/cli",
+  "version": "0.2.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "description": "Command-line interface for generating realistic, localized Chilean test data (RUT, people, addresses, phones, money, companies) without writing code",
+  "keywords": [
+    "cli",
+    "faker",
+    "fake-data",
+    "mock-data",
+    "test-data",
+    "fixtures",
+    "chile",
+    "rut",
+    "seed",
+    "seeded-random",
+    "deterministic"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johansneirap/datoteca.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/johansneirap/datoteca/tree/main/packages/cli#readme",
+  "bugs": "https://github.com/johansneirap/datoteca/issues",
+  "type": "module",
+  "bin": {
+    "datoteca": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@datoteca/cl": "workspace:*",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

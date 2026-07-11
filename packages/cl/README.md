@@ -37,6 +37,13 @@ dl.rut({ format: 'raw' }); // "123456789"
 dl.rut({ dv: false }); // "12345678"     (sin dígito verificador)
 ```
 
+`rut()` en la raíz genera persona natural. Para distinguir explícitamente entre persona natural y empresa (el SII asigna RUT de personas jurídicas desde el 50.000.000):
+
+```ts
+dl.persona.rut(); // "12345678-9"    (rango persona natural: 1.000.000-25.000.000)
+dl.empresa.rut(); // "76543210-K"    (rango empresa: 50.000.000-99.999.999)
+```
+
 Dígito verificador de forma independiente (método estático, no requiere seed) y dinero con rango personalizado:
 
 ```ts
@@ -53,13 +60,13 @@ dl.dinero.ufNumero(); // 1234.56     (number, hasta 2 decimales)
 
 | Namespace | Métodos |
 | --- | --- |
-| raíz | `rut(options?)`, `Datoteca.calcularDV(numero)` |
-| `persona` | `nombre()`, `apellido()`, `nombreCompleto()` |
+| raíz | `rut(options?)` (persona natural), `Datoteca.calcularDV(numero)` |
+| `persona` | `rut(options?)`, `nombre()`, `apellido()`, `nombreCompleto()` |
 | `direccion` | `comuna()`, `calle()`, `direccionCompleta()` |
 | `telefono` | `movil()`, `fijo()` |
 | `dinero` | `clp(options?)`, `uf(options?)`, `clpNumero(options?)`, `ufNumero(options?)` |
 | `banco` | `nombre()`, `cuenta()` |
-| `empresa` | `razonSocial()`, `giro()` |
+| `empresa` | `rut(options?)`, `razonSocial()`, `giro()` |
 
 Documentación completa, roadmap y guía de contribución en el [repo principal](https://github.com/johansneirap/datoteca).
 

@@ -1,9 +1,15 @@
 import type { Rng } from '@datoteca/core';
 import { APELLIDOS } from '../data/nombres.js';
 import { GIROS, SUFIJOS_EMPRESA, SUSTANTIVOS_EMPRESA } from '../data/empresas.js';
+import { generarRutEmpresa } from '../rut.js';
+import type { RutOptions } from '../rut.js';
 
 export class EmpresaNamespace {
   constructor(private readonly rng: Rng) {}
+
+  rut(options?: RutOptions): string {
+    return generarRutEmpresa(this.rng, options);
+  }
 
   razonSocial(): string {
     const sustantivo = this.rng.pickOne(SUSTANTIVOS_EMPRESA);
