@@ -1,5 +1,11 @@
 # @datoteca/cl
 
+## 0.2.0
+
+### Minor Changes
+
+- b18f8c6: Agrega `dinero.clpNumero()` y `dinero.ufNumero()`, variantes numéricas de `dinero.clp()`/`dinero.uf()` para quien necesite operar los valores (sumar, comparar, etc.) en vez de recibir el string ya formateado.
+
 ## 0.1.0
 
 ### Minor Changes
