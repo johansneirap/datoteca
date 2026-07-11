@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:06B6D4,100:9333EA&height=200&section=header&text=Datoteca&fontSize=70&fontColor=ffffff&fontAlignY=35&desc=Datos%20de%20prueba%20deterministicos%20por%20seed&descAlignY=58&descSize=20&animation=fadeIn" alt="Datoteca" width="100%" />
+
 # Datoteca
 
 Librería TypeScript para generar datos de prueba realistas y localizados de Chile — determinística por seed.
