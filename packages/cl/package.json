@@ -7,6 +7,13 @@
   },
   "description": "Generador de datos de prueba realistas para Chile: RUT, personas, direcciones, teléfonos, dinero, bancos y empresas",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johansneirap/datoteca.git",
+    "directory": "packages/cl"
+  },
+  "homepage": "https://github.com/johansneirap/datoteca/tree/main/packages/cl#readme",
+  "bugs": "https://github.com/johansneirap/datoteca/issues",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
