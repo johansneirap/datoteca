@@ -1,7 +1,10 @@
 {
   "name": "@datoteca/core",
-  "version": "0.0.1",
-  "publishConfig": { "access": "public", "provenance": true },
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "description": "PRNG determinístico y helpers compartidos para Datoteca",
   "license": "MIT",
   "type": "module",
@@ -20,7 +23,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
