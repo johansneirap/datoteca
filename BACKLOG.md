@@ -10,6 +10,5 @@ Ideas y mejoras anotadas pero no implementadas todavía, junto con la razón par
 ## Producto (ver también el Roadmap en README.md)
 
 - Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- RUT de empresa vs. RUT de persona natural como generadores separados
 - CLI (`npx datos-latam ...`)
 - Seeds reproducibles documentadas públicamente (dataset de ejemplos "golden" para snapshot testing)

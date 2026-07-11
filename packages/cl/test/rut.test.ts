@@ -47,6 +47,27 @@ describe('rut', () => {
   });
 });
 
+describe('rut de persona natural vs. empresa', () => {
+  it('los rangos nunca se solapan: persona < 50.000.000, empresa >= 50.000.000', () => {
+    const dl = new Datoteca({ seed: 2024 });
+    for (let i = 0; i < 100; i++) {
+      const rutPersona = Number(dl.persona.rut({ format: 'raw', dv: false }));
+      const rutEmpresa = Number(dl.empresa.rut({ format: 'raw', dv: false }));
+      expect(rutPersona).toBeLessThan(50_000_000);
+      expect(rutEmpresa).toBeGreaterThanOrEqual(50_000_000);
+    }
+  });
+
+  it('rut() en la raíz sigue generando en el rango de persona natural (compatibilidad)', () => {
+    const dl = new Datoteca({ seed: 5 });
+    for (let i = 0; i < 100; i++) {
+      const rut = Number(dl.rut({ format: 'raw', dv: false }));
+      expect(rut).toBeGreaterThanOrEqual(1_000_000);
+      expect(rut).toBeLessThanOrEqual(25_000_000);
+    }
+  });
+});
+
 describe('Datoteca.calcularDV', () => {
   it('calcula dígitos verificadores conocidos', () => {
     // Casos de referencia calculados con el algoritmo módulo 11 estándar.
