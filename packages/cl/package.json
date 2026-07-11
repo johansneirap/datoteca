@@ -6,6 +6,19 @@
     "provenance": true
   },
   "description": "Generador de datos de prueba realistas para Chile: RUT, personas, direcciones, teléfonos, dinero, bancos y empresas",
+  "keywords": [
+    "faker",
+    "fake-data",
+    "mock-data",
+    "test-data",
+    "fixtures",
+    "chile",
+    "rut",
+    "seed",
+    "seeded-random",
+    "deterministic",
+    "typescript"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
