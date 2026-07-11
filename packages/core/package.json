@@ -6,6 +6,15 @@
     "provenance": true
   },
   "description": "PRNG determinístico y helpers compartidos para Datoteca",
+  "keywords": [
+    "prng",
+    "seed",
+    "seeded-random",
+    "deterministic",
+    "mulberry32",
+    "random",
+    "typescript"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
