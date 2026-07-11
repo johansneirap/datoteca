@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Preguntas generales
+    url: https://github.com/johansneirap/datoteca
+    about: Para dudas que no sean un bug ni una propuesta de feature, revisa el README del repo antes de abrir un issue.

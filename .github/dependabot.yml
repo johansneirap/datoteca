@@ -1,0 +1,35 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      # core y cl no tienen dependencias de runtime propias (solo @datoteca/core
+      # como dependencia interna vía workspace:*, que Dependabot no versiona).
+      # Este grupo queda listo para cuando se agregue alguna dependencia de producción.
+      production-dependencies:
+        dependency-type: "production"
+      dev-dependencies:
+        dependency-type: "development"
+    # Los majors de eslint/typescript/vitest suelen romperse entre sí (ver
+    # incidente: typescript 7 + @typescript-eslint 8.63 rompió el lint en CI).
+    # Se actualizan a mano, revisando compatibilidad, no vía Dependabot.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
