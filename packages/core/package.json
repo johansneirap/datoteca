@@ -7,6 +7,13 @@
   },
   "description": "PRNG determinístico y helpers compartidos para Datoteca",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johansneirap/datoteca.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/johansneirap/datoteca/tree/main/packages/core#readme",
+  "bugs": "https://github.com/johansneirap/datoteca/issues",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
