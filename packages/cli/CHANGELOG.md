@@ -1,5 +1,12 @@
 # @datoteca/cli
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [5c11ac6]
+  - @datoteca/cl@0.4.0
+
 ## 0.2.0
 
 ### Minor Changes
