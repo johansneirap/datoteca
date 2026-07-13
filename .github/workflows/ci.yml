@@ -34,5 +34,11 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Publint
+        run: pnpm publint
+
+      - name: Are the types wrong
+        run: pnpm attw
+
       - name: Test
         run: pnpm test

@@ -11,6 +11,7 @@ Librería TypeScript para generar datos de prueba realistas y localizados de Chi
 [![npm version][npm-shield]][npm-url]
 [![License][license-shield]][license-url]
 [![CI Status][ci-shield]][ci-url]
+[![Docs][docs-shield]][docs-url]
 
 </div>
 
@@ -47,6 +48,8 @@ Librería TypeScript para generar datos de prueba realistas y localizados de Chi
 Y determinístico por seed: misma seed + mismo orden de llamadas → mismos resultados, para tests reproducibles.
 
 **¿Por qué no usar directamente [@faker-js/faker](https://fakerjs.dev/) y su locale `es_CL`?** No es un reemplazo, es un complemento. Faker es excelente para datos genéricos multi-locale (nombres, lorem, internet, etc.), pero no baja al detalle de un dato específico de un país como el RUT chileno con su algoritmo de verificación, o un listado exhaustivo y real de comunas. Datoteca se enfoca en ese detalle local que un generador generalista no puede cubrir bien para todos los países a la vez.
+
+La referencia completa de la API (clases, métodos y tipos de `@datoteca/core` y `@datoteca/cl`) está publicada en [johansneirap.github.io/datoteca](https://johansneirap.github.io/datoteca/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,3 +217,5 @@ Repo: [github.com/johansneirap/datoteca](https://github.com/johansneirap/datotec
 [license-url]: ./LICENSE
 [ci-shield]: https://img.shields.io/github/actions/workflow/status/johansneirap/datoteca/ci.yml?branch=main&style=for-the-badge&label=CI
 [ci-url]: https://github.com/johansneirap/datoteca/actions/workflows/ci.yml
+[docs-shield]: https://img.shields.io/github/actions/workflow/status/johansneirap/datoteca/docs.yml?branch=main&style=for-the-badge&label=Docs
+[docs-url]: https://johansneirap.github.io/datoteca/

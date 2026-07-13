@@ -28,6 +28,10 @@
   "homepage": "https://github.com/johansneirap/datoteca/tree/main/packages/cl#readme",
   "bugs": "https://github.com/johansneirap/datoteca/issues",
   "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -51,7 +55,9 @@
     "test": "vitest run",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "golden:generate": "vitest run --config vitest.golden.config.ts"
+    "golden:generate": "vitest run --config vitest.golden.config.ts",
+    "publint": "publint",
+    "attw": "attw --pack ."
   },
   "dependencies": {
     "@datoteca/core": "workspace:*"

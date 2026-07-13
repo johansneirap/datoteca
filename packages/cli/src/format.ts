@@ -1,5 +1,14 @@
 import type { OutputFormat, Row } from './types.js';
 
+/**
+ * Serializa filas de datos generados al formato de salida pedido.
+ *
+ * Serializes generated data rows into the requested output format.
+ *
+ * @param rows - Filas a serializar. / Rows to serialize.
+ * @param format - Formato de salida (`json`, `ndjson` o `csv`). / Output format (`json`, `ndjson`, or `csv`).
+ * @returns El texto serializado en el formato pedido. / The serialized text in the requested format.
+ */
 export function serializeRows(rows: readonly Row[], format: OutputFormat): string {
   switch (format) {
     case 'json':

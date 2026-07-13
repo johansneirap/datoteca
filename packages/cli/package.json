@@ -28,6 +28,9 @@
   "homepage": "https://github.com/johansneirap/datoteca/tree/main/packages/cli#readme",
   "bugs": "https://github.com/johansneirap/datoteca/issues",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "bin": {
     "datoteca": "./dist/cli.js"
   },
@@ -38,7 +41,8 @@
     "build": "tsup",
     "test": "vitest run",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
   },
   "dependencies": {
     "@datoteca/cl": "workspace:*",

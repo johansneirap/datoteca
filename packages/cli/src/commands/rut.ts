@@ -10,6 +10,14 @@ interface RutCliOptions extends CommonOptions {
   dv: boolean;
 }
 
+/**
+ * Registra el subcomando `rut` en el programa de Commander.
+ *
+ * Registers the `rut` subcommand on the Commander program.
+ *
+ * @param program - Programa de Commander al que agregar el subcomando. / Commander program to add the subcommand to.
+ * @param io - Abstracción de stdout/stderr a usar. / stdout/stderr abstraction to use.
+ */
 export function registerRutCommand(program: Command, io: Io): void {
   const command = withCommonOptions(
     program.command('rut').description('Genera RUT chilenos (persona o empresa, mismo algoritmo)'),

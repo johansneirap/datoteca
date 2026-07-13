@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@datoteca/core": ["../packages/core/src/index.ts"],
+      "@datoteca/cl": ["../packages/cl/src/index.ts"]
+    }
+  },
+  "include": ["*.ts"]
+}

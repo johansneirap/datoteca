@@ -4,6 +4,14 @@ import { withCommonOptions } from '../options.js';
 import { serializeRows } from '../format.js';
 import type { CommonOptions, Io, Row } from '../types.js';
 
+/**
+ * Registra el subcomando `address` en el programa de Commander.
+ *
+ * Registers the `address` subcommand on the Commander program.
+ *
+ * @param program - Programa de Commander al que agregar el subcomando. / Commander program to add the subcommand to.
+ * @param io - Abstracción de stdout/stderr a usar. / stdout/stderr abstraction to use.
+ */
 export function registerAddressCommand(program: Command, io: Io): void {
   const command = withCommonOptions(
     program.command('address').description('Genera direcciones chilenas'),
