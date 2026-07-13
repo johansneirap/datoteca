@@ -23,6 +23,14 @@ const UF_FORMATTER = new Intl.NumberFormat('es-CL', {
   maximumFractionDigits: 2,
 });
 
+/**
+ * Registra el subcomando `money` en el programa de Commander.
+ *
+ * Registers the `money` subcommand on the Commander program.
+ *
+ * @param program - Programa de Commander al que agregar el subcomando. / Commander program to add the subcommand to.
+ * @param io - Abstracción de stdout/stderr a usar. / stdout/stderr abstraction to use.
+ */
 export function registerMoneyCommand(program: Command, io: Io): void {
   const command = withCommonOptions(
     program.command('money').description('Genera montos en CLP o UF'),
