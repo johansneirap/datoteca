@@ -24,6 +24,10 @@
   "homepage": "https://github.com/johansneirap/datoteca/tree/main/packages/core#readme",
   "bugs": "https://github.com/johansneirap/datoteca/issues",
   "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -46,7 +50,9 @@
     "build": "tsup",
     "test": "vitest run",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "publint": "publint",
+    "attw": "attw --pack ."
   },
   "devDependencies": {
     "tsup": "^8.0.0",
