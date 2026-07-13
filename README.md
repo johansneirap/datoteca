@@ -177,9 +177,6 @@ Un subcomando por generador (`rut`, `person`, `address`, `phone`, `money`, `comp
 **Backlog — fuera del MVP**
 
 - [ ] Otros países/locales (`@datoteca/pe`, `@datoteca/ar`, `@datoteca/es`, ...)
-- [ ] JSDoc bilingüe (ES/EN) en toda la API pública (`core`, `cl`, `cli`)
-- [ ] Sitio de documentación con TypeDoc + GitHub Pages — bloqueado por el punto anterior (ver [BACKLOG.md](./BACKLOG.md))
-- [ ] Mejoras de developer experience: lint de JSDoc en CI, `publint`/`attw`, ejemplos de código verificados contra tipos (ver [BACKLOG.md](./BACKLOG.md))
 
 <!-- TODO: agregar link a GitHub Issues cuando el repo tenga labels/triage configurado -->
 
