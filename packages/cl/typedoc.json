@@ -1,0 +1,13 @@
+{
+  "entryPoints": [
+    "src/index.ts",
+    "src/rut.ts",
+    "src/namespaces/persona.ts",
+    "src/namespaces/direccion.ts",
+    "src/namespaces/telefono.ts",
+    "src/namespaces/dinero.ts",
+    "src/namespaces/banco.ts",
+    "src/namespaces/empresa.ts"
+  ],
+  "entryPointStrategy": "expand"
+}

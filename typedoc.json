@@ -1,0 +1,14 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPointStrategy": "packages",
+  "entryPoints": ["packages/core", "packages/cl"],
+  "out": "docs-site",
+  "name": "Datoteca — API Reference",
+  "readme": "README.md",
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "navigationLinks": {
+    "GitHub": "https://github.com/johansneirap/datoteca",
+    "npm (@datoteca/cl)": "https://www.npmjs.com/package/@datoteca/cl"
+  }
+}
